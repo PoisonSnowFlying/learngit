@@ -1,0 +1,194 @@
+/** Website template by # **/
+/** Website template by # **/
+*{margin:0;padding:0;}
+body{padding:0;margin:0;}
+.clearfix:after {  visibility: hidden;  display: block;  font-size: 0;  content: " ";  clear: both;  height: 0;  }
+a:link, a:visited {  text-decoration: none;  }
+a, input:focus {  outline: none;  }
+/****************************************头部样式*******************************************************************************/
+div#header {  position: relative; height: 90px;background-color: #08122d;}
+/*****做图标和文字**********************************************************/
+.lheader{float:left;width:160px;padding:17px 20px;}
+.lheader .logo {float:left;}
+.lheader p.masthead-brand{float:left;font-size: 30px;color: #ecf5fc;line-height:56px;margin-left:20px;}
+/********导航*************************************************************/
+.info,.nav{float:right;}
+.nav li {  float: left;  height: 90px;  line-height: 90px;}
+.nav li a {  text-decoration: none;  display: block;  font-family: Arial;  font-size: 14px;  text-transform: uppercase;  line-height: 90px;  padding: 0 25px;  border-top: none;  color: #ecf5fc;  }
+.nav li a:hover {  font-size: 18px;  font-family: Arial;  }
+/**********登录导航*********************************************************/
+.info{margin-right：: 20px;}
+.info li {  float: left;  height: 90px;  line-height: 90px;  }
+.info li a {  text-decoration: none;  display: block;  font-family: Arial;  font-size: 12px;text-transform: uppercase;  line-height: 90px;  padding: 0 5px;  border-top: none;  color: #ecf5fc;  }
+.info li a:hover {  font-size: 14px;  font-family: Arial;}
+
+div#hdline {  width: 100%;  height: 3px;  background-color: red;}
+/*****************************尾部样式***********************************************************************************/
+div#footer {  width: 100%;  background-color: #08122d;  padding-bottom: 10px;  }
+div#footer div {  width: 960px;  margin: 0 auto;  }
+div#footer div div.section {  /*background: transparent url("../images/bg-footer-top.png");background-repeat: no-repeat;
+	background-position: center top;*/  width: 940px;  padding-top: 11px;  overflow: hidden;  }
+div#footer div div.section div {  /*background: transparent url("../images/bg-footer-bottom.png");background-repeat: no-repeat;
+	background-position: center bottom;*/  width: 940px;  padding-bottom: 12px;  }
+div#footer div div.section div div {  /*background: transparent url("../images/bg-footer-center.png");
+	background-repeat: repeat-y;background-position: center center;*/  width: 940px;  height: 80px;  }
+div#footer div div.section div div ul {  margin: 0;  padding: 0;  list-style-type: none;  }
+div#footer div div.section div div ul li.first {  width: 100%;  height: 80px;  float: left;  text-align: center;  }
+div#footer div div.section div div ul li {  width: 195px;  height: 80px;  float: left;  }
+div#footer div div.section div div ul li {  width: 195px;  height: 80px;  float: left;  text-align: center;  }
+div#footer div div.section div div ul li.first h2 {  font-family: Arial;  font-size: 14px;  color: #fcc91c;  text-transform: uppercase;  font-weight: normal;  text-align: left;  }
+div#footer div div.section div div ul li.first p {  font-family: Arial;  font-size: 14px;  color: #adb9c7;  text-align: left;  }
+div#footer div div.section div div ul li.first p a {  font-family: Arial;  font-size: 14px;  color: #adb9c7;  text-align: left;  }
+div#footer div div.section div div ul li.first p a:hover {  font-family: Arial;  font-size: 14px;  color: #92b6ce;  text-align: left;  }
+div#footer div div.section div div ul li.first p a.readmore {  font-family: Arial;  font-size: 14px;  color: #6d6d6d;  text-align: left;  text-decoration: none;  }
+div#footer div div.section div div ul li.first p a.readmore:hover {  font-family: Arial;  font-size: 14px;  color: #92b6ce;  text-align: left;  }
+div#footer div div.section div div ul li h2 {  font-family: Arial;  font-size: 14px;  color: #e5a704;  text-transform: uppercase;  font-weight: normal;  }
+div#footer div div.section div div ul li ul.connect {  margin: 0 0 0 15px;  padding: 0;  list-style-type: none;  }
+div#footer div div.section div div ul li ul.connect li {  float: left;  width: auto;  margin: 0 10px;  }
+div#footer div div.section div div ul li ul.connect li a.facebook {  text-decoration: none;  background: url("../images/icon.png") no-repeat scroll 0 -75px transparent;
+	display: inline-block;  height: 25px;  width: 25px;  }
+div#footer div div.section div div ul li ul.connect li a.facebook:hover {  background: url("../images/icon.png") no-repeat scroll 0 0 transparent;  }
+div#footer div div.section div div ul li ul.connect li a.twitter {  background: url("../images/icon.png") no-repeat scroll 0 -378px transparent;
+	text-decoration: none;  display: inline-block;  height: 26px;  width: 38px;  }
+div#footer div div.section div div ul li ul.connect li a.twitter:hover {  background: url("../images/icon.png") no-repeat scroll 0 -302px transparent;  }
+div#footer div div.section div div ul li ul.connect li a.googleplus {  background: url("../images/icon.png") no-repeat scroll 0 -226px transparent;
+	text-decoration: none;  display: inline-block;  height: 25px;  width: 37px;  }
+div#footer div div.section div div ul li ul.connect li a.googleplus:hover {  background: url("../images/icon.png") no-repeat scroll 0 -150px transparent;  }
+div#footer div div.footnote {  width: 960px;  text-align: center;  margin-top: 50px;  }
+div#footer div div.footnote p {  color: #adb9c7;  font-family: Arial;  font-size: 12px;  }
+div#footer div div.footnote p a {  text-decoration: none;  }
+div#footer div div.footnote p a:hover {  color: #ffffff;  }
+/***************style of activityDetail*****************/
+ol, ul {  list-style: none;  }
+.clearfix:after {  visibility: hidden;  display: block;  font-size: 0;  clear: both;  height: 0;  }
+.fll {  float: left;  }
+.activityprofile {  width:1200px;position: relative;  margin-top: 20px;  }
+.ap-lside {  width: 900px; margin-top:90px; }
+.ap-title {  width: 840px;  line-height: 32px;  }
+.ap-title h2 {  font-family: 'microsoft yahei';  font-size: 28px;  color: #595757;  line-height: 38px;  }
+.ap-intro {  margin-top: 26px;  }
+.ap-lintro{}
+.ap-lintro-banner {  width: 300px;  height: auto;  border: 1px solid #dcdcdc;  overflow: hidden;  }
+.slides {  position: relative;  width: 300px;  height: 300px;  overflow: hidden;  }
+.smallSlides {width: 300px;background-color: #fafafa;padding-top:61px;}
+.smallSlides ul {margin:0;padding:0;border:1px solid red;}
+.smallSlides ul li{display:inline-block;float:left;list-style: none;margin:12px 0 12px 12px;}
+.ap-rintro {  width: 540px;  margin-left: 35px;  overflow: hidden;  }
+.tour-intro { border-top: 1px dotted #b1b1b1;  border-bottom: 1px dotted #b1b1b1; }
+
+.bytwo{height:50px;line-height: 50px;margin-bottom: 25px;}
+.ap-rintro-top dl {zoom: 1;  font-size: 14px;  color: #595757;  font-family: 'microsoft yahei';  clear: both;}
+.ap-rintro-top dl dd{float:left;}
+.type1 dl,.type2 dl{display:inline-block;width: 170px;}
+.type3 dl,.type4 dl{display:inline-block;width: 530px;}
+.type5 dl {display:inline-block; width:340px;}
+
+.tour-intro dl dt { float: left;  display: inline;  color:red;  width: 87px;  white-space: nowrap;  letter-spacing: 2px;}
+.type1 dl dt,.type2 dl dt {letter-spacing: 10px; }
+
+.type5 dl dd {margin-right:10px;}
+.type5 div {float:right;}
+.type5 .price {font-size: 38px;  color: #fa7700;  font-family: 'Microsoft yahei';  margin-right:52px; text-align:center; }
+
+.time .signup{float:right;}
+.time .signup button {  float: left;  display: inline-block;  width: 210px;  height: 42px;  line-height: 42px;  background-color: #f97700;  color: #fff;  font-size: 20px;  font-weight: bold;  text-align: center;  font-family: 'microsoft yahei';  border-radius: 4px;  -webkit-border-radius: 4px;  -moz-border-radius: 4px;  -o-border-radius: 4px;  letter-spacing: 5px;  cursor: pointer;  border: none;}
+.time {zoom: 1;  font-size: 14px;  color: #595757;  font-family: 'microsoft yahei';clear: both}
+.time .remaining {float:left;width:300px;}
+.time .timer{ color: #f97700;display: inline-block;}
+/****右侧领队***position: absolute;  right: 30px; */
+.ap-rside-box {   position: absolute;  right: 30px; z-index: 10;  width: 265px;  border: 1px solid #ececec;  margin-left: 5px;  background-color: #f7f7f7;  overflow: hidden;  }
+.leader {  padding: 25px 40px;  border-bottom: 2px dotted #ececec;  overflow: hidden;  }
+.leader h5, .vice_leader h5{  float: left;  display: inline-block;  color: #7f7f7f;  font-size: 14px;  font-family: 'Microsoft Yahei';  }
+.leader .pic_info {margin-top: 15px;}
+.pic_info .pic {  height: 70px;line-height: 70px;}
+.leader .pic_info .i {  float: left;  width: 105px;  margin-left: 18px;  }
+.pic_info .c p {  margin-top: 5px;  font-size: 12px;  color: #808080;  font-family: 'microsoft yahei';  }
+/****副领队***/
+.vice_leader {  padding: 20px 40px;  min-height: 190px;  overflow: hidden;  }
+.vice_leader .c p {  margin-top: 5px;  font-size: 12px;  color: #808080;  font-family: 'microsoft yahei';  }
+.vice_leader .c p span{display: inline-block;margin-left:20px;}
+/****线*****/
+.ap-rside-box .line {padding: 0 40px;}
+
+/**************/
+.hd-detail {  margin-top: 50px;  }
+.hd-ldetail { border: 1px solid #e5e5e5;  overflow: hidden;  width: 870px;  padding-bottom: 40px;  position: relative;  }
+.hd-ldetail ul{  overflow: hidden;  font-size: 14px;  line-height: 47px; text-align:center; }
+.hd-ldetail ul li { width:216px;float: left;  border-right: 1px solid #e5e5e5;  border-bottom: 1px solid #e5e5e5;  background-color: #fafafa;  font-family: 'Microsoft Yahei';  cursor: pointer;  }
+.hd-ldetail ul .last{border-right:none;}
+.hd-ldetail ul li a {  display: block;color: #595757;  font-size: 16px;  }
+/******************************************************************************报名页面**************************************************/
+.signupPage {  width: 1200px;  margin: 0 auto; background-color:gainsboro;}
+.mainbox {  overflow: hidden;}
+.mainbox .content {margin: 0 15px 30px ;  overflow: hidden;}
+/*.mainbox .content {  border: 1px solid #dcdcdc;margin: 30px 15px;  overflow: hidden;}*/
+/*.mainbox h5 {  padding: 15px 0;   font-size: 20px;  }*/
+.mainbox h5 {    padding: 10px 0;font-size: 20px; font-weight:bold;}
+.innerHdInfo {border:1px solid blue;padding:20px 20px;}
+.innerHdInfo .t {color: #3cb43c;font-size: 16px;}
+.innerHdInfo .t a{color: #3cb43c;}
+.innerHdInfo .d {margin-top: 20px;  }
+.hdDetail{text-align:left;font-size:14px;margin-bottom: 20px;}
+.detail3{margin-bottom:0;}
+.hdDetail ul li{line-height:30px;height:30px;width:184px;float:left;}
+.hdDetail ul li.date{width:368px;}
+.hdDetail dl{text-align:left;}
+.hdDetail dt{color:red;width:70px;display:inline-block;}
+.hdDetail .short{width:45px;}
+.hdDetail dd{display:inline-block;}
+.hdDetail .joinPlace dt{width:150px;}
+.hdDetail .joinPlace dd{margin-left:-10px;}
+.hdDetail .joinPlace dd span{display:inline-block;margin-right:20px;}
+/**********************新增小伙伴*******************************/
+.hdCompany{text-align:center;font-size:14px;font-family: "Microsoft Yahei", Arial, sans-serif}
+.hdCompany .person{float:left;width:250px;padding:10px 20px;border:1px solid blue;margin-right:20px;}
+.basicInfo ul{text-align:left;height:30px;line-height: 30px;}
+.basicInfo ul li{width:125px;float:left;}
+.otherInfo dl{height:30px;line-height: 30px;}
+.otherInfo dl dt{color:red;float:left;}
+.otherInfo dl dd{float:left;}
+.addBtn button {display: inline-block;  width: 120px;  height: 20px;  line-height: 20px;  background-color:rgb(243,243,243);  color: black;
+	font-size: 14px;  text-align: center;  font-family: "Microsoft Yahei", Arial, sans-serif;
+	letter-spacing: 5px;  cursor: pointer;  border: 1px solid rgb(243,243,243);}
+
+/*************************人员选择********************************/
+.hdHandle {text-align:center;font-size:14px;font-family: "Microsoft Yahei", Arial, sans-serif}
+.hdHandle h5{text-align:left;}
+.personChoice {line-height: 30px;}
+.personChoice table{width:1170px;}
+.personChoice table .tableTitle{background-color: #FF8B03}
+.personChoice table select{width:100px;}
+.personChoice table .personDelete {text-align:center;float:right;display:inline-block;height:20px; line-height: 20px;letter-spacing: 2px;width:50px;}
+
+/***************订单详情*********/
+.hdOrder {text-align:center;font-size:14px;font-family: "Microsoft Yahei", Arial, sans-serif}
+.hdOrder h5{text-align:left;}
+.orderDetail {line-height: 30px;}
+.orderDetail table{width:1170px;}
+.orderDetail table .tableTitle{background-color: #FF8B03}
+.orderDetail table .hdName {line-height:15px;text-align:left;font-size:12px;width:400px;}
+/*****************领队的话***************/
+.message {text-align:center;font-size:14px;font-family: "Microsoft Yahei", Arial, sans-serif;border-top:2px dotted blue;border-bottom:2px dotted blue;}
+.message div{float:left;width:570px;height:50px; line-height:50px;}
+.message div  dt{float:left;}
+.message div  dd{float:left;}
+.message .toLeader input{width:370px;display:inline-block;}
+.message .insurance {padding-left:100px; width:470px;}
+.message .insurance dd{display: inline-block;margin-left:50px;}
+.message .insurance .count{margin-left:250px;}
+
+.attention{margin-top:20px;max-width:870px;text-align:left;font-size:14px;font-family: "Microsoft Yahei", Arial, sans-serif;}
+.attention dt{width:70px;}
+.attention dd{margin-left:72px;}
+/*********************提交按钮和总计**************************/
+.countMoney div {width:100%;}
+.countMoney .sum dl{float:right;}
+.countMoney .submit{margin-top:20px;}
+.countMoney .submit button#prevStep{ display: inline-block;float:left;}
+.countMoney .submit button#subBtn{display: inline-block;float:right;}
+.countMoney .sum dt ,.countMoney .sum dd{float:left;display:inline-block;}
+.countMoney .sum dt {text-align:center;font-weight:bold;font-size:36px;font-family: "Microsoft Yahei", Arial, sans-serif;}
+.countMoney .sum dd {color:red;text-align:center;font-weight:bold;font-size:36px;font-family: "Microsoft Yahei", Arial, sans-serif;}
+.countMoney button {display: inline-block;  width: 150px;  height: 50px;  line-height: 50px;  background-color:rgb(243,243,243);
+	font-size: 20px;  text-align: center;  font-family: "Microsoft Yahei", Arial, sans-serif;
+	cursor: pointer;  border: 1px solid rgb(243,243,243);}
