@@ -122,10 +122,11 @@
 		<div class="content hdCompanys">
 			<h5>选择参与活动的小伙伴</h5>
 			<div class="hdCompany clearfix">
-				<div class="person marginR selected">
+				<div class="person marginR notselected" data-id="123">
 					<div class="basicInfo">
 						<ul class="clearfix">
 							<li class="name">七胖</li>
+							<li class="idCard" style="display:none">222222222222222</li>
 						</ul>
 					</div>
 					<div class="line line-dashed "></div>
@@ -136,14 +137,15 @@
 						</dl>
 						<dl>
 							<dt>电话号码：</dt>
-							<dd class="idCard">13818283848</dd>
+							<dd class="phoneNumber">13818283848</dd>
 						</dl>
 					</div>
 				</div>
-				<div class="person marginR selected">
+				<div class="person marginR notselected " data-id="124">
 					<div class="basicInfo">
 						<ul class="clearfix">
 							<li class="name">七胖</li>
+							<li class="idCard" style="display:none">222222222222222</li>
 						</ul>
 					</div>
 					<div class="line line-dashed "></div>
@@ -154,14 +156,15 @@
 						</dl>
 						<dl>
 							<dt>电话号码：</dt>
-							<dd class="idCard">13818283848</dd>
+							<dd class="phoneNumber">13818283848</dd>
 						</dl>
 					</div>
 				</div>
-				<div class="person marginR notselected">
+				<div class="person marginR notselected" data-id="125">
 					<div class="basicInfo">
 						<ul class="clearfix">
 							<li class="name">七胖</li>
+							<li class="idCard" style="display:none">222222222222222</li>
 						</ul>
 					</div>
 					<div class="line line-dashed "></div>
@@ -172,14 +175,15 @@
 						</dl>
 						<dl>
 							<dt>电话号码：</dt>
-							<dd class="idCard">13818283848</dd>
+							<dd class="phoneNumber">13818283848</dd>
 						</dl>
 					</div>
 				</div>
-				<div class="person notselected">
+				<div class="person notselected" data-id="126">
 					<div class="basicInfo">
 						<ul class="clearfix">
 							<li class="name">七胖</li>
+							<li class="idCard" style="display:none">222222222222222</li>
 						</ul>
 					</div>
 					<div class="line line-dashed "></div>
@@ -190,7 +194,7 @@
 						</dl>
 						<dl>
 							<dt>电话号码：</dt>
-							<dd class="idCard">13818283848</dd>
+							<dd class="phoneNumber">13818283848</dd>
 						</dl>
 					</div>
 				</div>
@@ -203,7 +207,7 @@
 		<div class="content hdHandle">
 			<div class="personChoice">
 				<table>
-					<tr class="tableTitle">
+					<tr class="tableTitle" >
 						<td >上车地点</td>
 						<td >姓名</td>
 						<td >性别</td>
@@ -212,36 +216,36 @@
 						<td >证件号码</td>
 						<td >操作</td>
 					</tr>
-					<tr class="tableInfo">
-						<td>
-							<select class="togetherPlace">
-								<option value="jmx">角门西</option>
-								<option value="hxxj">惠新西街</option>
-								<option value="css">慈寿寺</option>
-							</select>
-						</td>
-						<td>阿廖沙</td>
-						<td>男</td>
-						<td>88888888888</td>
-						<td>身份证</td>
-						<td>111111111111111111</td>
-						<td><a class="personDelete">删除</a></td>
-					</tr>
-					<tr class="tableInfo">
-						<td>
-							<select class="togetherPlace">
-								<option value="jmx">角门西</option>
-								<option value="hxxj">惠新西街</option>
-								<option value="css">慈寿寺</option>
-							</select>
-						</td>
-						<td>阿廖沙</td>
-						<td>男</td>
-						<td>88888888888</td>
-						<td>身份证</td>
-						<td>111111111111111111</td>
-						<td><a class="personDelete" >删除</a></td>
-					</tr>
+					<!--<tr class="tableInfo" data-id="123">-->
+						<!--<td>-->
+							<!--<select class="togetherPlace">-->
+								<!--<option value="jmx">角门西</option>-->
+								<!--<option value="hxxj">惠新西街</option>-->
+								<!--<option value="css">慈寿寺</option>-->
+							<!--</select>-->
+						<!--</td>-->
+						<!--<td>阿廖沙</td>-->
+						<!--<td>男</td>-->
+						<!--<td>88888888888</td>-->
+						<!--<td>身份证</td>-->
+						<!--<td>111111111111111111</td>-->
+						<!--<td><a class="personDelete">删除</a></td>-->
+					<!--</tr>-->
+					<!--<tr class="tableInfo" data-id="124">-->
+						<!--<td>-->
+							<!--<select class="togetherPlace">-->
+								<!--<option value="jmx">角门西</option>-->
+								<!--<option value="hxxj">惠新西街</option>-->
+								<!--<option value="css">慈寿寺</option>-->
+							<!--</select>-->
+						<!--</td>-->
+						<!--<td>阿廖沙</td>-->
+						<!--<td>男</td>-->
+						<!--<td>88888888888</td>-->
+						<!--<td>身份证</td>-->
+						<!--<td>111111111111111111</td>-->
+						<!--<td><a class="personDelete" >删除</a></td>-->
+					<!--</tr>-->
 				</table>
 			</div>
 		</div>
@@ -333,5 +337,78 @@
 		</div>
 	</div>
 </div>
+<script>
+	$(function () {
+		var companys = $('.hdCompany');
+		var personContainer = $('.hdHandle .personChoice ');
+		var personInfoArr = ['name','sex','phoneNumber','idCard'];
+		// 添加参与人员
+		companys.on('click','div.person',function (event) {
+			var self = this;
+			signUpClickFn(event,self);
+		});
+		// 动态绑定，删除按钮删除当前选择的人员
+		personContainer.on('click','.personDelete',function (event) {
+			$(this).parents('.tableInfo').remove();
+			var personId = $(this).parents('.tableInfo').data('id');
+			companys.find('.person[data-id=' + personId + ']').toggleClass('notselected selected');
+		});
+
+		/**
+		 *
+		 * @param event  点击事件对象
+		 * @param self   代理元素ele
+		 */
+		function signUpClickFn (event,self) {
+			var flag = false;
+			var personId = $(self).data('id');
+			var personInfo = getPersonInfoFn(self);
+			personContainer.find('.tableInfo').each(function (index,ele) {
+				if($(ele).data('id') === personId) {
+					flag = true;
+				}
+			});
+			if(flag) {
+				alert('已经添加过该成员');
+			} else {
+				var fragment = '<tr class="tableInfo" data-id= '+ personId + '>' +
+						'<td>' +
+						'<select class="togetherPlace"> ' +
+						'<option value="jmx">角门西</option> ' +
+						'<option value="hxxj">惠新西街</option> ' +
+						'<option value="css">慈寿寺</option> ' +
+						'</select> ' +
+						'</td> ' +
+						'<td class="name">' + personInfo["name"] + '</td> ' +
+						'<td class="sex">' + personInfo["sex"] + '</td> ' +
+						'<td class="phoneNumber">' + personInfo["phoneNumber"] + '</td> ' +
+						'<td>身份证</td> ' +
+						'<td class="idCard">' + personInfo["idCard"] + '</td> ' +
+						'<td><a class="personDelete" >删除</a></td>' +
+						'</tr>';
+				personContainer.find('table').append($(fragment));
+				$(self).toggleClass('notselected selected');
+			}
+		}
+
+		/**
+		 *
+		 * @param ele 代理元素ele
+		 * @returns {{}} 代理元素的信息对象包括name,sex,phoneNumber,idCard
+		 */
+		function getPersonInfoFn(ele) {
+			var obj = {};
+			ele && personInfoArr.forEach(function (item,index) {
+				obj[item]= $(ele).find('.' + item).text();
+			});
+			return obj;
+		}
+
+
+
+
+
+	});
+</script>
 </body>
 </html>
