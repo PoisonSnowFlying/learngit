@@ -263,9 +263,9 @@
 					<tr class="tableInfo">
 						<td class="hdName">非周末【天行户外】1.18【北京怀北国际滑雪场】全天不限时-免费教学-跟我们一起去吧！</td>
 						<td>阿廖沙</td>
-						<td>120</td>
-						<td>2</td>
-						<td>240</td>
+						<td id="price">120</td>
+						<td id="signupNumber">1</td>
+						<td id="countMoney">120</td>
 					</tr>
 				</table>
 			</div>
@@ -281,8 +281,8 @@
 				<div class="insurance">
 					<dl class="clearfix">
 						<dt>保险：</dt>
-						<dd class="price"><input type="radio"/><span>每人5.00元</span></dd>
-						<dd class="count"><span>5</span></dd>
+						<dd class="price"><input checked="checked"  id='insurance' type="checkbox"/><span>每人5.00元</span></dd>
+						<dd class="count"><span id="insurancePrice">5</span></dd>
 					</dl>
 				</div>
 			</div>
@@ -291,7 +291,7 @@
 			<div class="sum clearfix">
 				<dl class="clearfix">
 					<dt>总计：</dt>
-					<dd><span>200.00</span></dd>
+					<dd><span id="allMoney">125.00</span></dd>
 				</dl>
 			</div>
 			<div class="submit clearfix">
@@ -342,6 +342,7 @@
 		var companys = $('.hdCompany');
 		var personContainer = $('.hdHandle .personChoice ');
 		var personInfoArr = ['name','sex','phoneNumber','idCard'];
+		var insuranceFlag = true;
 		// 添加参与人员
 		companys.on('click','div.person',function (event) {
 			var self = this;
@@ -352,6 +353,20 @@
 			$(this).parents('.tableInfo').remove();
 			var personId = $(this).parents('.tableInfo').data('id');
 			companys.find('.person[data-id=' + personId + ']').toggleClass('notselected selected');
+			calculatorFn(insuranceFlag);
+		});
+		// 保险选择事件
+		$('#insurance').on('click',function () {
+			if($(this).prop('checked')) {
+				insuranceFlag = true;
+				calculatorFn(insuranceFlag);
+				$(this).prop('checked',true);
+			} else {
+				$(this).prop('checked',false);
+				insuranceFlag = false;
+				calculatorFn(insuranceFlag);
+
+			}
 		});
 
 		/**
@@ -362,32 +377,21 @@
 		function signUpClickFn (event,self) {
 			var flag = false;
 			var personId = $(self).data('id');
+			console.log(personId);
 			var personInfo = getPersonInfoFn(self);
-			personContainer.find('.tableInfo').each(function (index,ele) {
-				if($(ele).data('id') === personId) {
+			$.each(personContainer.find('.tableInfo'),function (index,ele) {
+//				console.log(personId);
+				if($(ele).data('id') === personInfo.data) {
+					$(this).remove();
+					companys.find('.person[data-id=' + personInfo.data + ']').toggleClass('notselected selected');
+					calculatorFn(insuranceFlag);
 					flag = true;
+
 				}
 			});
-			if(flag) {
-				alert('已经添加过该成员');
-			} else {
-				var fragment = '<tr class="tableInfo" data-id= '+ personId + '>' +
-						'<td>' +
-						'<select class="togetherPlace"> ' +
-						'<option value="jmx">角门西</option> ' +
-						'<option value="hxxj">惠新西街</option> ' +
-						'<option value="css">慈寿寺</option> ' +
-						'</select> ' +
-						'</td> ' +
-						'<td class="name">' + personInfo["name"] + '</td> ' +
-						'<td class="sex">' + personInfo["sex"] + '</td> ' +
-						'<td class="phoneNumber">' + personInfo["phoneNumber"] + '</td> ' +
-						'<td>身份证</td> ' +
-						'<td class="idCard">' + personInfo["idCard"] + '</td> ' +
-						'<td><a class="personDelete" >删除</a></td>' +
-						'</tr>';
-				personContainer.find('table').append($(fragment));
-				$(self).toggleClass('notselected selected');
+			if(!flag) {
+				addCompanyFn(self,personInfo);
+				calculatorFn(insuranceFlag);
 			}
 		}
 
@@ -401,13 +405,50 @@
 			ele && personInfoArr.forEach(function (item,index) {
 				obj[item]= $(ele).find('.' + item).text();
 			});
+			obj['data'] = $(ele).data('id');
 			return obj;
 		}
 
+		/**
+		 *
+		 * @param self 点击事件对象
+		 * @param personInfo 点击事件对象的基本信息对象
+		 */
+		function addCompanyFn (self,personInfo) {
+			var fragment = '<tr class="tableInfo" data-id= '+ personInfo.data + '>' +
+					'<td>' +
+					'<select class="togetherPlace"> ' +
+					'<option value="jmx">角门西</option> ' +
+					'<option value="hxxj">惠新西街</option> ' +
+					'<option value="css">慈寿寺</option> ' +
+					'</select> ' +
+					'</td> ' +
+					'<td class="name">' + personInfo["name"] + '</td> ' +
+					'<td class="sex">' + personInfo["sex"] + '</td> ' +
+					'<td class="phoneNumber">' + personInfo["phoneNumber"] + '</td> ' +
+					'<td>身份证</td> ' +
+					'<td class="idCard">' + personInfo["idCard"] + '</td> ' +
+					'<td><a class="personDelete" >删除</a></td>' +
+					'</tr>';
+			personContainer.find('table').append($(fragment));
+			$(self).toggleClass('notselected selected');
+		}
 
-
-
-
+		function calculatorFn (insuranceFlag) {
+			var personNumber = personContainer.find('.tableInfo').length + 1;
+			var price = $("#price").text();
+			var insurancePrice = $('#insurancePrice').text();
+			var allMoney,countMoney;
+			countMoney = personNumber * price;
+			allMoney = countMoney;
+			if(insuranceFlag) {
+				allMoney = countMoney + personNumber * insurancePrice;
+			}
+			$('#signupNumber').text(personNumber);
+			$("#countMoney").text(countMoney.toFixed(2));
+			$("#allMoney").text(allMoney.toFixed(2));
+			// 获取
+		}
 	});
 </script>
 </body>
